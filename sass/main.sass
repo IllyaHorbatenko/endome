@@ -1,0 +1,1157 @@
+@import "bourbon"
+@import "vars.sass"
+@import "../sprite/sprite.sass"
+
+// loads Libs SASS
+@import "../app/libs/animate/animate.sass"
+//@import "../app/libs/owl.carousel/assets/owl.carousel.sass"
+@import "../app/libs/slick-slider/slick.css"
+//@import "../app/libs/slick-slider/slick-theme.css"
+@import "../app/libs/FontAwesome/font-awesome.min"
+@import "../app/libs/slidebars/slidebars.min"
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+// Оформление слайдбара
+[off-canvas]
+	transition: transform 0.4s
+	overflow: auto
+	-webkit-overflow-scrolling: touch
+
+[off-canvas*=left]
+	width: 250px
+
+[canvas=container]
+	background-color: transparent
+	-webkit-tap-highlight-color: transparent
+	&.flex
+		display: flex
+		flex-direction: column
+		height: 100%
+		//внешний вид скроллбара
+		scrollbar-base-color: $main_color
+		//для IE
+		scrollbar-arrow-color: $main_color
+		//для IE
+		//внешний вид скроллбара для -webkit- остальное тут https://poselab.com/en/blog/custom-scrollbars-in-webkit/
+		&::-webkit-scrollbar
+			width: 12px
+		&::-webkit-scrollbar-thumb
+			background-color: $main_color
+			&:hover
+				background-color: darken($main_color, 10%)
+		&::-webkit-scrollbar-track-piece
+			background-color: transparent
+
+nav[canvas]
+	position: fixed
+	top: 20px
+	left: 20px
+	display: none
+	z-index: 100
+
+[class*=js-open-], [class*=js-toggle-], [class*=js-close-]
+	cursor: pointer
+
+[off-canvas]
+	ul
+		&.menu
+			margin: 0
+			padding: 0
+			display: block
+			list-style: none
+// Секция our_advantages
+.our_advantages
+	min-height: 630px
+	background-color: #fff
+	h2
+		margin-top: 75px
+		color: #626262
+		text-align: center
+		font-size: 35px
+	.our_advantages_item
+		margin-bottom: 55px
+		min-height: 230px
+		h3
+			font-size: 27px
+			text-align: center
+		p
+			margin-top: 15px
+			@include fz(16)
+			line-height: 1.2
+			text-align: center
+		.our_advantages_item_img
+			text-align: center
+			i
+				@include fz(72)
+				color: #00b6f4
+// Секция main_content
+.main_content
+	text-align: center
+// Пример checkbox
+.check, .radio
+	display: inline-block
+	vertical-align: middle
+	color: $main_color
+	cursor: pointer
+	position: relative
+	i
+		display: inline-block
+		vertical-align: middle
+		width: 16px
+		height: 16px
+		&.fa-2
+			position: relative
+			right: -1px
+			top: -2px
+		&.fa-1
+			position: relative
+			top: -2px
+	span
+		display: inline-block
+		font-size: 20px
+	input[type=checkbox],
+	input[type=radio]
+		display: none
+		&:not(:checked) ~ .fa-2
+			display: none
+		&:checked + i
+			&.fa-1
+				display: none
+			&.fa-2
+				display: inline-block
+// Секция 
+.intermediate
+	text-align: center
+	min-height: 300px
+	background-color: #00b6f4
+	.intermediate_title
+		max-width: 650px
+		margin: auto
+		color: #052243
+		h3
+			margin: 30px 30px
+			text-transform: uppercase
+			@include fz(24)
+			color: #052243
+
+	.intermediate_wrap
+		margin-top: 40px
+		form
+			.intermediate_item
+				display: inline-block
+				input
+					width: 100%
+					display: inline-block
+					border: 1px solid #a2b6c9
+					background: #fff
+					color: #43637f
+					height: 40px
+					margin: 0 10px
+					padding: 0 0 0 9px
+					&::-webkit-input-placeholder
+						color: #43637f
+					&:-moz-placeholder
+						color: #43637f
+					&::-moz-placeholder
+						color: #43637f
+					&:-ms-input-placeholder
+						color: #43637f
+				input[type=submit]
+					background: #052243
+					color: #fff
+
+.section-slider
+	padding-bottom: 65px
+	.slick-dots
+		font-size: 0
+		text-align: center
+		padding-top: 25px
+		li
+			display: inline-block
+			margin: 5px
+			button
+				background: #c0c1c4
+				transition: .2s
+				width: 12px
+				border: 0
+				height: 12px
+				border-radius: 50%
+				color: transparent
+				&:hover
+					text-decoration: none
+				&:focus
+					outline: none
+					text-decoration: none
+
+			&.slick-active
+				button
+					background: #828389
+	.slider-progress
+		height: 5px
+		opacity: .7
+		margin-top: -47px
+		font-size: 0
+		background: #484a52
+		.progress
+			background: #8f6d1d
+			height: 100%
+			width: 40%
+	.item
+		position: relative
+		&:focus
+			outline: none
+		img
+			display: inline-block
+			width: 100%
+			max-height: 559px
+		.text-wrap
+			position: absolute
+			right: 0
+			width: 50%
+			height: 100%
+			top: 0
+			.tabel-wrap
+				display: table
+				height: 100%
+				.tabel-cell
+					padding-bottom: 70px
+					display: table-cell
+					vertical-align: middle
+			.line-wrap
+				position: absolute
+				top: 0
+				display: flex
+				align-items: center
+				height: 100%
+				left: 7px
+				width: 13px
+				justify-content: space-between
+			.text
+				padding: 0 42px
+				position: relative
+				.big-line,
+				.small-line
+					display: block
+				.big-line
+					height: calc(100% - 32px)
+					background: #b3913e
+					width: 4px
+				.small-line
+					height: calc(100% - 12px)
+					background: #696b75
+					width: 1px
+			h2
+				font-family: $Gothic
+				margin: 0
+				line-height: 1
+				margin-bottom: 13px
+				font-weight: 100
+				font-size: 60px
+				color: #fff
+			p
+				font-family: $Gothic
+				font-size: 20px
+				color: #a77600
+
+@keyframes hover-link
+	0%
+		transform: translate3d(0px, 0px, 0px)
+	100%
+		transform: translate3d(10px, 0px, 0px)
+
+
+
+// About Us Section
+.about-us-section
+	padding: 50px 0
+	.about-us-wrap
+		float: right
+		padding-left: 78px
+	.title-wrap
+		position: relative
+		padding-top: 23px
+		margin-bottom: 55px
+		h2
+			margin: 0
+		.big-title
+			position: absolute
+			font-size: 60px
+			color: #edeeee
+			top: -27px
+			left: -17px
+			z-index: -1
+		.small-title
+			text-transform: uppercase
+			font-weight: 100
+			font-size: 20px
+			color: #1c1f29
+		.big-line,
+		.small-line
+			display: block
+			position: absolute
+			left: 0
+		.big-line
+			width: 74px
+			background: #b3913e
+			height: 2px
+			bottom: -9px
+		.small-line
+			width: 165px
+			background: #696b75
+			height: 1px
+			bottom: -2px
+	.text-wrap
+		color: #8c8c8e
+		margin-bottom: 36px
+		font-size: 14px
+		line-height: 1.7
+		padding-left: 2px
+		word-spacing: -1px
+		text-align: justify
+		padding-right: 72px
+	.learn-more-button
+		font-size: 14px
+		font-family: $GothicB
+		color: #1e202b
+		display: inline-block
+		position: relative
+		padding-right: 35px
+		&:hover
+			text-decoration: none
+			.arrow-wrap
+				animation: hover-link 0.3s ease-in-out infinite alternate
+		&:active
+			text-decoration: none
+		&:focus
+			text-decoration: none
+		.arrow-wrap
+			position: absolute
+			right: 0
+			top: 10px
+			width: 24px
+			span
+				display: block
+			.line
+				position: absolute
+				top: 2px
+				left: 0
+				height: 1px
+				width: 23px
+				background: $main_color
+			.arrow
+				position: absolute
+				right: 0px
+				transform: rotate(45deg)
+				width: 5px
+				height: 5px
+				color: $main_color
+				border-top: 1px solid
+				border-right: 1px solid
+
+.slick-arrow
+	width: 0
+	height: 0
+	position: absolute
+	left: -10000px
+	top: -10000px
+// Our Team Section
+.our-team-section
+	background: #fff
+	padding: 54px 0
+	position: relative
+	.our-team-bg
+		position: absolute
+		width: 100%
+		bottom: 10px
+		z-index: 0
+	.title-wrap
+		text-align: center
+		position: relative
+		margin-bottom: 57px
+		h2
+			margin: 0
+		.big-title
+			position: absolute
+			font-size: 60px
+			color: #edeeee
+			top: -55px
+			left: 0
+			right: 0
+			z-index: -1
+		.small-title
+			text-transform: uppercase
+			font-weight: 100
+			font-size: 20px
+			color: #1c1f29
+			text-align: center
+		.big-line,
+		.small-line
+			display: block
+			margin: auto
+		.big-line
+			width: 74px
+			background: #b3913e
+			height: 2px
+			margin-top: 3px
+		.small-line
+			width: 165px
+			background: #696b75
+			height: 1px
+			margin-top: 2px
+	.our-team-content
+		position: relative
+		min-height: 630px
+		.humen-wrap
+			position: absolute
+			text-align: center
+			font-size: 14px
+			.name
+				font-family: $GothicB
+			.post
+				font-family: $Gothic
+			img
+				margin-bottom: 34px
+			.social-link
+				display: flex
+				margin-top: 8px
+				justify-content: center
+				a
+					margin: 0 2.5px
+					color: #fff
+					width: 20px
+					height: 20px
+					background: #979797
+					display: table
+					transition: .2s
+					&:hover
+						background: #a77600
+						text-decoration: none
+					&:active
+						text-decoration: none
+					&:focus
+						text-decoration: none
+
+					i
+						display: table-cell
+						vertical-align: middle
+			&.first
+				left: 92px
+			&.second
+				left: 385px
+				top: 170px
+			&.third
+				right: 378px
+				top: 170px
+			&.fourth
+				right: 86px
+
+// service section
+.service-section
+	padding: 37px 0
+	position: relative
+	.slider-lines
+		position: absolute
+		width: calc(50% - 417px)
+		right: 0
+		top: 198px
+		height: 510px
+		div
+			width: 100%
+			border-top: 3px solid #c19f4c
+			position: absolute
+		.first
+			top: 0
+		.second
+			bottom: 0
+		.anim-bg
+			background: #f5f5f6
+			height: 421px
+			top: 42px
+			border: 0
+	.description-bg
+		height: 507px
+		width: calc(50% - 600px)
+		background: #f5f5f6
+		position: absolute
+		left: 0
+		top: 192px
+	.title-wrap
+		text-align: center
+		position: relative
+		margin-bottom: 63px
+		h2
+			margin: 0
+		.big-title
+			position: absolute
+			font-size: 60px
+			color: #edeeee
+			top: -55px
+			left: 0
+			right: 0
+			z-index: -1
+		.small-title
+			text-transform: uppercase
+			font-weight: 100
+			font-size: 20px
+			color: #1c1f29
+			text-align: center
+		.big-line,
+		.small-line
+			display: block
+			margin: auto
+		.big-line
+			width: 74px
+			background: #b3913e
+			height: 2px
+			margin-top: 3px
+		.small-line
+			width: 165px
+			background: #696b75
+			height: 1px
+			margin-top: 2px
+	.service-description-wrap
+		float: left
+		margin-top: 47px
+		position: relative
+		.wrap
+			width: 687px
+			height: 516px
+			background: url('../img/arr-slider.png') 50% 50% no-repeat
+			background-size: contain
+			display: flex
+			align-items: center
+			color: #82807d
+			& > div
+				display: none
+				padding-left: 35px
+				&.active
+					display: block
+		h3
+			color: #35363c
+			font-size: 24px
+			margin: 0 0 25px
+			padding: 0 25px 24px 0
+			display: inline-block
+			border-bottom: 1px solid #bd9a46
+		.description-text
+			width: 365px
+			margin-bottom: 27px
+			font-size: 14px
+		.more-link
+			padding: 6px 10px
+			border: 1px solid #be9c49
+			font-size: 14px
+			color: #868689
+			display: inline-block
+			position: relative
+			&:hover
+				text-decoration: none
+				.arrow-wrap
+					animation: hover-link 0.3s ease-in-out infinite alternate
+			&:active
+				text-decoration: none
+			&:focus
+				text-decoration: none
+			.arrow-wrap
+				position: absolute
+				right: -20px
+				top: 14px
+				width: 24px
+				span
+					display: block
+				.line
+					position: absolute
+					top: 2px
+					left: 0
+					height: 1px
+					width: 23px
+					background: #be9c49
+				.arrow
+					position: absolute
+					right: 0px
+					transform: rotate(45deg)
+					width: 5px
+					height: 5px
+					color: #be9c49
+					border-top: 1px solid
+					border-right: 1px solid
+
+	.select-wrap
+		float: right
+		position: relative
+		.wrap
+			width: 504px
+			height: 100%
+			transition: .3s
+			position: relative
+			border-radius: 50%
+	.animation-wrap
+		background: #f5f5f6
+		height: 423px
+		width: 423px
+		position: absolute
+		top: 100px
+		right: -23px
+		border-radius: 50% 0 0 50%
+		overflow: hidden
+	.animation-item
+		width: 100%
+		height: 100%
+		text-align: center
+		display: none
+		&.item1
+			display: block
+			.img-wrap
+				height: 423px
+				width: 141px
+				.img1
+					z-index: 1
+					left: 0
+					top: 70px
+				.img2
+					right: 0
+					top: 40px
+					z-index: 0
+		&.item2
+			.img-wrap
+				height: 423px
+				width: 141px
+				.img1
+					z-index: 1
+					left: 0
+					top: 70px
+				.img2
+					right: 0
+					top: 40px
+					z-index: 0
+		&.item3
+			.img-wrap
+				height: 423px
+				width: 141px
+				.img1
+					z-index: 1
+					left: 0
+					top: 70px
+				.img2
+					right: 0
+					top: 40px
+					z-index: 0
+		&.item4
+			.img-wrap
+				height: 423px
+				width: 141px
+				.img1
+					z-index: 1
+					left: 0
+					top: 70px
+				.img2
+					right: 0
+					top: 40px
+					z-index: 0
+		&.item5
+			.img-wrap
+				height: 423px
+				width: 141px
+				.img1
+					z-index: 1
+					left: 0
+					top: 70px
+				.img2
+					right: 0
+					top: 40px
+					z-index: 0
+		&.item6
+			.img-wrap
+				height: 423px
+				width: 141px
+				.img1
+					z-index: 1
+					left: 0
+					top: 70px
+				.img2
+					right: 0
+					top: 40px
+					z-index: 0
+
+		.tabel
+			display: table
+			width: 100%
+			height: 100%
+		.tabel-cell
+			display: table-cell
+			vertical-align: middle
+		.img-wrap
+			position: relative
+			margin: auto
+			img
+				position: absolute
+		h3
+			font-size: 18px
+			margin: 0 0 10px
+			color: #35363c
+		.order
+			color: #fff
+			background: #7d7e85
+			display: flex
+			justify-content: center
+			align-items: center
+			width: 155px
+			margin: auto
+			height: 36px
+			border-radius: 5px
+			text-transform: uppercase
+			font-size: 14px
+			position: relative
+			z-index: 100
+			border: 1px solid transparent
+			transition: color 0.3s, background 0.3s, border 0.3s
+			&:hover
+				color: #7d7e85
+				background: transparent
+				border: 1px solid #7d7e85
+				text-decoration: none
+			&:active
+				text-decoration: none
+			&:focus
+				text-decoration: none
+	.select-overflow
+		width: 354px
+		overflow: hidden
+		margin-right: 158px
+		padding: 58px 0 59px 63px
+	.line-path
+		border-radius: 270px
+		border: 3px solid #c19f4c
+		width: 800px
+		height: 510px
+	.service-item
+		padding: 5px
+		height: 124px
+		width: 124px
+		background: #fff
+		border-radius: 50%
+		position: absolute
+		cursor: pointer
+		transition: 0.3s
+		&.item1
+			left: calc(50% - 34px)
+			top: -62px
+		&.item2
+			left: -16px
+			top: 48px
+		&.item3
+			left: -39px
+			bottom: 84px
+		&.item4
+			left: calc(50% - 69px)
+			top: calc(100% - 60px)
+		&.item5
+			right: -20px
+			bottom: 58px
+		&.item6
+			right: -38px
+			top: 82px
+		&.active
+			background: #c19f4c
+		.number
+			background: #fff
+			border-radius: 50%
+			color: #fff
+			padding: 5px
+			position: absolute
+			top: 2px
+			left: 2px
+			span
+				border-radius: 50%
+				display: inline-block
+				width: 32px
+				height: 32px
+				background: #c19f4c
+				display: flex
+				justify-content: center
+				align-items: center
+		.img-wrap
+			border: 3px solid #c19f4c
+			border-radius: 50%
+			width: 100%
+			height: 100%
+			display: flex
+			justify-content: center
+			align-items: center
+	.top-button,
+	.bottom-button
+		font-size: 0px
+		background: none
+		border-radius: 50%
+		border: 3px solid #c19f4c
+		width: 54px
+		height: 54px
+		position: absolute
+		right: 140px
+		z-index: 100
+		background: url('../img/arr.png') #fff 50% 50% no-repeat
+		&:focus
+			outline: none
+	.top-button
+		top: 30px
+		transform: rotate(-90deg)
+	.bottom-button
+		bottom: 30px
+		transform: rotate(90deg)
+
+
+
+
+//	Portfolio Section
+.portfolio-section
+	padding: 37px 0
+	.title-wrap
+		text-align: center
+		position: relative
+		margin-bottom: 63px
+		h2
+			margin: 0
+		.big-title
+			position: absolute
+			font-size: 60px
+			color: #edeeee
+			top: -55px
+			left: 0
+			right: 0
+			z-index: -1
+		.small-title
+			text-transform: uppercase
+			font-weight: 100
+			font-size: 20px
+			color: #1c1f29
+			text-align: center
+		.big-line,
+		.small-line
+			display: block
+			margin: auto
+		.big-line
+			width: 74px
+			background: #b3913e
+			height: 2px
+			margin-top: 3px
+		.small-line
+			width: 165px
+			background: #696b75
+			height: 1px
+			margin-top: 2px
+	.content
+		margin-bottom: 59px
+		.wrap
+			color: #bcbdbf
+			padding: 50px 59px
+			border: 10px solid #9a9a9a
+			background: #30343c
+			.title
+				color: #fff
+				font-weight: 100
+				margin: 0
+				font-size: 24px
+				float: left
+				&:after
+					content: ''
+					display: block
+					width: 74px
+					background: #846212
+					height: 2px
+					margin-top: 3px
+			.type
+				line-height: 3
+				float: right
+				font-size: 14px
+			.text
+				padding-top: 45px
+				font-size: 14px
+				text-align: justify
+				word-spacing: -1px
+				line-height: 1.4
+				margin-bottom: 36px
+			.link-to-work
+				padding: 6px 10px
+				border: 1px solid #846212
+				font-size: 14px
+				color: #bcbdbf
+				display: inline-block
+				position: relative
+				&:hover
+					text-decoration: none
+					.arrow-wrap
+						animation: hover-link 0.3s ease-in-out infinite alternate
+				&:active
+					text-decoration: none
+				&:focus
+					text-decoration: none
+				.arrow-wrap
+					position: absolute
+					right: -20px
+					top: 14px
+					width: 24px
+					span
+						display: block
+					.line
+						position: absolute
+						top: 2px
+						left: 0
+						height: 1px
+						width: 23px
+						background: #846212
+					.arrow
+						position: absolute
+						right: 0px
+						transform: rotate(45deg)
+						width: 5px
+						height: 5px
+						color: #846212
+						border-top: 1px solid
+						border-right: 1px solid
+	.show-more
+		text-align: center
+		a
+			display: inline-block
+			padding: 9px 29px
+			text-transform: uppercase
+			font-size: 16px
+			border: 1px solid #c19f4c
+			color: #a77600
+			transition: .2s
+			&:hover
+				border: 1px solid transparent
+				color: #d3bb80
+				background: #a77600
+				text-decoration: none
+			&:active
+				text-decoration: none
+			&:focus
+				text-decoration: none
+
+
+@keyframes hover-blog
+	0%
+		transform: rotateY(90deg)
+	100%
+		transform: rotateY(0deg)
+// Blog Section
+.blog-section
+	padding: 74px 0
+	background: #fff
+	.title-wrap
+		text-align: center
+		position: relative
+		margin-bottom: 40px
+		h2
+			margin: 0
+		.big-title
+			position: absolute
+			font-size: 60px
+			color: #edeeee
+			top: -55px
+			left: 0
+			right: 0
+			z-index: -1
+		.small-title
+			text-transform: uppercase
+			font-weight: 100
+			font-size: 20px
+			color: #1c1f29
+			text-align: center
+		.big-line,
+		.small-line
+			display: block
+			margin: auto
+		.big-line
+			width: 74px
+			background: #b3913e
+			height: 2px
+			margin-top: 3px
+		.small-line
+			width: 165px
+			background: #696b75
+			height: 1px
+			margin-top: 2px
+	.no-more-about
+		text-align: center
+		margin-bottom: 65px
+		font-size: 12px
+		color: #8c8c8e
+	.content
+		margin-bottom: 72px
+		.wrap
+			overflow: hidden
+			position: relative
+			padding: 12px 10px
+			img
+				position: absolute
+				left: 0px
+				top: 0
+				z-index: 0
+			&:hover
+				.description
+					transform: rotateX(0deg)
+					opacity: 1
+		.description
+			transition: 0.3s ease-in-out
+			padding: 15px 46px
+			background: rgba(255,255,255,0.8)
+			min-height: 180px
+			transform: rotateX(30deg)
+			opacity: .8
+			.text
+				color: #929294
+				font-size: 14px
+				text-align: justify
+				line-height: 1.4
+				margin-bottom: 10px
+			.link
+				font-size: 14px
+				color: #c19f4c
+				&:hover
+					color: #c19f4c
+					text-decoration: none
+				&:active
+					text-decoration: none
+				&:focus
+					text-decoration: none
+			.title
+				font-size: 12px
+				color: #6b6c73
+				margin-bottom: 20px
+				h3
+					color: #37383e
+					font-size: 14px
+					text-transform: uppercase
+					margin: 0
+				&:after
+					content: ''
+					display: block
+					width: 40px
+					background: #c19f4c
+					height: 2px
+					margin-top: 9px
+	.show-more
+		text-align: center
+		a
+			display: inline-block
+			text-transform: uppercase
+			font-size: 16px
+			color: #1e202b
+			transition: .2s
+			&:hover
+				color: #b08319
+				text-decoration: none
+			&:active
+				text-decoration: none
+			&:focus
+				text-decoration: none
+
+//	Section Contacts
+.contacts-section
+	color: #dedfe0
+	background: url('../img/form-bg.jpg') 50% 50% no-repeat
+	background-size: cover
+	padding: 58px 0 81px
+	color: #dfdfe0
+	text-align: center
+	.title
+		font-size: 48px
+		margin: 0 0 15px
+	.no-more-about
+		color: #a8aaae
+		font-size: 14px
+		margin-bottom: 49px
+		line-height: 1.4
+	form
+		font-size: 0
+		& > div
+			font-size: 14px
+			display: inline-block
+			margin: 0px 14px
+		.textarea
+			display: block
+			width: 558px
+			margin: auto
+			padding-top: 32px
+			margin-bottom: 34px
+		label
+			font-weight: 100
+			margin: 0px
+			text-align: left
+			display: block
+		.modal_form_input_wrap
+			width: 167px
+		input[type=text]
+			height: 38px
+		textarea
+			height: 121px
+			resize: none
+		input[type=text],
+		textarea
+			background: rgba(255,255,255,0.5)
+			padding: 10px
+			color: #141722
+			border-radius: 2px
+			transition: .2s
+			border: none
+			width: 100%
+			&:focus
+				background: rgba(255,255,255,0.7)
+				outline: none
+		input[type=submit]
+			height: 34px
+			width: 150px
+			font-size: 16px
+			text-transform: uppercase
+			background: transparent
+			border: 1px solid #8e949c
+			transition: .2s
+			&:hover
+				background: #dfdfe0
+				color: #1e202b
+
+
+
+
+//	Секция
+//	Секция
+//	Секция 
+//	Секция 
+//	Секция
+//	Секция
+
+
+// Секия footer 
+.footer
+	background: #ffffff
+	padding: 50px 0
+	color: #a1a1a3
+	font-size: 12px
+	text-align: center
+
+//ALWAYS END
+@import "media"
+

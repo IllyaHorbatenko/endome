@@ -1,0 +1,323 @@
+@import "bourbon"
+
+/*==========  Desktop First Method  ==========*/
+@media only screen and (max-width : 1200px)
+	/**/
+	// для фиксированного сайта
+	// body
+	// 	width: 1200px
+	.header_modal
+		margin-top: 0
+	.intermediate
+		.intermediate_wrap
+			margin-bottom: 20px
+			.intermediate_item
+				display: block
+				margin: 30px auto 30px
+			.modal_form_input_wrap
+				display: inline-block
+
+	.header
+		.navigation
+			ul
+				li
+					a
+						width: 95px
+
+	.our-team-section
+		.title-wrap
+			margin-bottom: 0
+		.our-team-content
+			.humen-wrap
+				&.first,
+				&.fourth
+					top: 130px
+				&.second
+					left: 295px
+					top: 250px
+				&.third
+					right: 295px
+					top: 250px
+
+	.blog-section
+		.content
+			.wrap
+				overflow: hidden
+			.description
+				padding: 10px 15px
+				.text
+					margin: 0
+
+	.service-section
+		.description-bg
+			width: calc(50% - 485px)
+			height: 420px
+			top: 235px
+		.service-description-wrap
+			.wrap
+				width: 570px
+		.select-overflow
+			width: 310px
+			margin-right: 90px
+		.animation-wrap
+			width: 338px
+			padding-left: 20px
+		.slider-lines
+			width: calc(50% - 395px)
+		.service-item
+			height: 100px
+			width: 100px
+			.number
+				span
+					width: 25px
+					height: 25px
+			.img-wrap
+				img
+					width: 50%
+			&.item4
+				top: calc(100% - 37px)
+		.bottom-button,
+		.top-button
+			right: 33px
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 991px)
+	/**/
+	.section-slider
+		.item
+			.text-wrap
+				h2
+					font-size: 42px
+				p
+					font-size: 18px
+	.header
+		.navigation
+			display: none
+		.burger
+			margin-left: 0
+		.logo
+			text-align: center
+			margin-left: 0
+		.header_modal
+			a
+				margin-top: 10px
+				margin-left: 0
+	.our-team-section
+		.our-team-bg
+			display: none
+		.title-wrap
+			margin-bottom: 57px
+		.our-team-content
+			text-align: center
+			font-size: 0px
+			.humen-wrap
+				margin-bottom: 40px
+				width: 35%
+				position: static
+				display: inline-block
+
+	.portfolio-section
+		.content
+			.wrap
+				padding: 10px 16px
+				.title
+					font-size: 18px
+				.type
+					line-height: 1.5
+				.text
+					margin-bottom: 25px
+					font-size: 12px
+					padding-top: 20px
+
+	.blog-section
+		.content
+			margin-bottom: 10px
+			& > div
+				padding: 0
+			.wrap
+				width: 360px
+				margin: auto auto 20px
+
+	.service-section
+		display: none
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+	
+	/*Disable Animation on Mobile Devices*/
+	.animated
+		/*CSS transitions*/
+		-o-transition-property: none !important
+		-moz-transition-property: none !important
+		-ms-transition-property: none !important
+		-webkit-transition-property: none !important
+		transition-property: none !important
+		/*CSS transforms*/
+		-o-transform: none !important
+		-moz-transform: none !important
+		-ms-transform: none !important
+		-webkit-transform: none !important
+		transform: none !important
+		/*CSS animations*/
+		-webkit-animation: none !important
+		-moz-animation: none !important
+		-o-animation: none !important
+		-ms-animation: none !important
+		animation: none !important
+	
+	.header_title
+		h1
+			font-size: 30px
+			margin-top: 40px
+	[off-canvas*=left]
+		width: 255px
+
+	.portfolio-section
+		.content
+			.item
+				width: 500px
+				margin: auto auto 20px
+				padding: 0px
+
+	.header
+		.logo
+			text-align: left
+		.logo-wrap
+			padding: 0 180px 0 80px
+		.burger-wrap
+			position: absolute
+			left: 0
+			top: 0
+		.header_modal-wrap
+			position: absolute
+			right: 0
+			top: 0
+
+	.section-slider
+		.item
+			.text-wrap
+				width: 65%
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 614px)
+	.contacts-section
+		.title
+			font-size: 32px
+		.no-more-about
+			margin-bottom: 30px
+		form
+			& > div
+				display: block
+				margin: 0
+			.modal_form_input_wrap
+				width: 100%
+				margin: 0 0 15px
+			.textarea
+				margin: 0 0 35px
+				width: 100%
+				padding-top: 0
+
+	.our-team-section
+		.our-team-content
+			.humen-wrap
+				display: block
+				width: 100%
+@media only screen and (max-width : 535px)
+	.portfolio-section
+		.content
+			.item
+				width: 100%
+				min-width: 300px
+
+	.about-us-section
+		.about-us-wrap
+			padding-left: 40px
+		.text-wrap
+			padding-right: 10px
+
+	.section-slider
+		.item
+			.text-wrap
+				width: 70%
+				h2
+					font-size: 28px
+				p
+					font-size: 12px
+@media only screen and (max-width : 520px)
+	/**/
+		
+	.dm-modal
+		width: 100%
+	.dm-modal
+		input[type=submit]
+			width: 100%
+
+@media only screen and (max-width : 480px)
+	/**/
+
+	.header_title
+		h1
+			font-size: 26px
+	.modal_form_input_wrap
+		.modal_input_error
+			right: 0px
+	.intermediate
+		.intermediate_title
+			h3
+				font-size: 20px
+
+	.header
+		.logo-wrap
+			padding: 0 155px 0 80px
+		.header_modal
+			a
+				padding: 9px 15px
+				font-size: 10px
+
+	.section-slider
+		.item
+			.text-wrap
+				width: 90%
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 380px)
+	.blog-section
+		.content
+			.wrap
+				width: 100%
+@media only screen and (max-width : 340px)
+	.header
+		.logo
+			img
+				width: 100%
+
+@media only screen and (max-width : 320px)
+	/**/
+
+
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px)
+	/**/
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px)
+	/**/
+
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px)
+	/**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px)
+	/**/
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px)
+	.container
+		width: 1200px
+
+
+
