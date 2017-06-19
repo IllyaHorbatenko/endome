@@ -355,20 +355,20 @@ nav[canvas]
 				display: block
 			.line
 				position: absolute
-				top: 2px
+				top: -3px
 				left: 0
-				height: 1px
 				width: 23px
-				background: $main_color
-			.arrow
-				position: absolute
-				right: 0px
-				transform: rotate(45deg)
-				width: 5px
-				height: 5px
-				color: $main_color
-				border-top: 1px solid
-				border-right: 1px solid
+				background: url("../img/arrow.png") 50% 50% no-repeat
+				height: 10px
+			//.arrow
+			//	position: absolute
+			//	right: 0px
+			//	transform: rotate(45deg)
+			//	width: 5px
+			//	height: 5px
+			//	color: $main_color
+			//	border-top: 1px solid
+			//	border-right: 1px solid
 
 .slick-arrow
 	width: 0
@@ -381,6 +381,7 @@ nav[canvas]
 	background: #fff
 	padding: 54px 0
 	position: relative
+	z-index: -1
 	.our-team-bg
 		position: absolute
 		width: 100%
@@ -583,20 +584,12 @@ nav[canvas]
 					display: block
 				.line
 					position: absolute
-					top: 2px
+					top: -3px
 					left: 0
-					height: 1px
 					width: 23px
-					background: #be9c49
-				.arrow
-					position: absolute
-					right: 0px
-					transform: rotate(45deg)
-					width: 5px
-					height: 5px
-					color: #be9c49
-					border-top: 1px solid
-					border-right: 1px solid
+					background: url("../img/arrow.png") 50% 50% no-repeat
+					height: 10px
+
 
 	.select-wrap
 		float: right
@@ -916,20 +909,12 @@ nav[canvas]
 						display: block
 					.line
 						position: absolute
-						top: 2px
+						top: -3px
 						left: 0
-						height: 1px
 						width: 23px
-						background: #846212
-					.arrow
-						position: absolute
-						right: 0px
-						transform: rotate(45deg)
-						width: 5px
-						height: 5px
-						color: #846212
-						border-top: 1px solid
-						border-right: 1px solid
+						background: url("../img/arrow.png") 50% 50% no-repeat
+						height: 10px
+
 	.show-more
 		text-align: center
 		a
@@ -1133,6 +1118,228 @@ nav[canvas]
 				background: #dfdfe0
 				color: #1e202b
 
+//BLOG PAGE
+
+.links-blog-section
+	overflow: hidden
+	padding: 80px 0 0 0
+	background: url("../img/blog-bg.png") 50% 50% no-repeat
+	background-size: cover
+	min-height: 715px
+	position: relative
+	.content
+		margin: auto
+		position: absolute
+		top: calc(50% - 133px)
+		left: 0
+		right: 112px
+		transform: rotate(-45deg)
+		.items
+			padding: 0 45px
+			text-align: center
+			font-size: 0
+			margin-bottom: 12px
+			&.margin-l
+				margin-left: 270px
+			.item
+				min-width: 131px
+				min-height: 128px
+				display: inline-block
+				font-size: 0px
+				position: relative
+				margin: 0 6px
+				&.link
+					border: 2px solid #dddee1
+					.text
+						opacity: 1
+						p
+							color: #686b77
+							font-size: 16px
+							text-transform: uppercase
+						.transform
+							top: 34px
+						&:before
+							display: none
+				&:hover
+					text-decoration: none
+					.text
+						opacity: 1
+				&:active
+					text-decoration: none
+				&:focus
+					text-decoration: none
+			.text
+				color: #2a2930
+				text-align: center
+				opacity: 0
+				transition: opacity .2s
+				&:before
+					content: ''
+					display: block
+					position: absolute
+					top: 10px
+					left: 10px
+					background: rgba(255,255,255,0.7)
+					width: calc(100% - 20px)
+					height: calc(100% - 20px)
+				h3
+					font-size: 14px
+					position: relative
+					margin: 0
+					&:after
+						content: ''
+						display: block
+						width: 40px
+						height: 2px
+						background: #be9437
+						margin: 5px auto 0
+				p
+					font-size: 12px
+					color: #595658
+					margin-top: 10px
+				.transform
+					position: absolute
+					top: 40px
+					left: 0px
+					right: 0
+					transform: rotate(45deg)
+				.flex-wrap
+					display: flex
+					justify-content: center
+					align-items: center
+
+
+//blog-contant-section
+.blog-contant-section
+	padding: 74px 0
+	background: #fff
+	position: relative
+	z-index: 1
+	.title-wrap
+		text-align: center
+		position: relative
+		margin-bottom: 49px
+		h2
+			margin: 0
+		.big-title
+			position: absolute
+			font-size: 60px
+			color: #edeeee
+			top: -55px
+			left: 0
+			right: 0
+			z-index: -1
+		.small-title
+			text-transform: uppercase
+			font-weight: 100
+			font-size: 20px
+			color: #1c1f29
+			text-align: center
+		.big-line,
+		.small-line
+			display: block
+			margin: auto
+		.big-line
+			width: 74px
+			background: #b3913e
+			height: 2px
+			margin-top: 3px
+		.small-line
+			width: 165px
+			background: #696b75
+			height: 1px
+			margin-top: 2px
+	.blog-item
+		color: #c3c4c8
+		font-size: 14px
+		background: #4e5260
+		padding: 15px
+		margin-bottom: 30px
+		text-align: justify
+		img
+			margin-bottom: 9px
+		.text
+			line-height: 1.45
+			margin-bottom: 17px
+		h3
+			text-align: center
+			font-size: 14px
+			position: relative
+			margin: 0 0 7px 0
+			&:after
+				content: ''
+				display: block
+				width: 40px
+				height: 2px
+				background: #be9437
+				margin: 5px auto 0
+		.link-to-work
+			margin-right: 39px
+			padding: 6px 10px
+			border: 1px solid #846212
+			font-size: 14px
+			color: #c3c4c8
+			display: inline-block
+			position: relative
+			&:hover
+				text-decoration: none
+				.arrow-wrap
+					animation: hover-link 0.3s ease-in-out infinite alternate
+			&:active
+				text-decoration: none
+			&:focus
+				text-decoration: none
+			.arrow-wrap
+				position: absolute
+				right: -20px
+				top: 14px
+				width: 24px
+				span
+					display: block
+				.line
+					position: absolute
+					top: -3px
+					left: 0
+					width: 23px
+					background: url("../img/arrow.png") 50% 50% no-repeat
+					height: 10px
+	.pagination
+		font-size: 0
+		.right
+			float: right
+			margin-right: 100px
+		.prev-arr
+			margin-right: 9px
+		.next-arr
+			margin-left: 9px
+		a
+			font-size: 16px
+			width: 40px
+			height: 40px
+			margin: 0 1px
+			border: 1px solid
+			display: flex
+			justify-content: center
+			align-items: center
+			float: left
+			color: #4e5260
+			transition: .2s
+			&.active
+				background: #4e5260
+				color: #fff
+				&:hover
+					color: #fff
+			&:hover
+				background: #4e5260
+				color: #fff
+				text-decoration: none
+			&:active
+				text-decoration: none
+			&:focus
+				text-decoration: none
+
+
+
 
 
 
@@ -1146,11 +1353,22 @@ nav[canvas]
 
 // Секия footer 
 .footer
-	background: #ffffff
-	padding: 50px 0
-	color: #a1a1a3
-	font-size: 12px
-	text-align: center
+	background: #03081c
+	padding: 40px 0 0 0
+	color: #b6b6b9
+	h3
+		font-size: 20px
+		color: #c8c9ca
+	.contacts
+		li
+			padding-left: 45px
+			margin-bottom: 10px
+	.bottom
+		background: #ffffff
+		padding: 50px 0
+		color: #a1a1a3
+		font-size: 12px
+		text-align: center
 
 //ALWAYS END
 @import "media"
