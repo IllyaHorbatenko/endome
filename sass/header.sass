@@ -419,6 +419,10 @@ li
 		text-align: left
 		a
 			display: block
+	.burger-wrap
+		display: none
+		position: relative
+		z-index: 10
 	.burger
 		background: #101528
 		width: 45px
@@ -499,18 +503,103 @@ li
 	&.active
 		transform-origin: 0px 50% 0px
 		transform: skewY(5deg) scaleX(.7) translateY(-27px) translateX(425px)
-.menu
+.mobile-menu
 	background: #050814
-
 	width: 298px
 	height: 100vh
-	position: absolute
+	position: fixed
 	top: 0px
 	left: 0px
+	min-height: 530px
+	overflow-y: scroll
 	//transform: translateX(-298px)
 	transition: .3s
+	padding: 100px 0 10px 50px
+
 	&.active
 		transform: translateX(0)
+	.mobile-nav
+		margin-bottom: 55px
+		li
+			font-size: 18px
+			margin-bottom: 25px
+			text-transform: uppercase
+			a
+				color: #a77600
+				&:hover
+					color: #a77600
+					text-decoration: none
+				&:active
+					text-decoration: none
+				&:focus
+					text-decoration: none
+	.contacts
+		margin-bottom: 40px
+		h3
+			font-size: 14px
+			color: #c8c9ca
+			font-weight: 100
+			margin: 0 0 10px
+		li
+			padding-left: 45px
+			margin-bottom: 18px
+			position: relative
+			color: #9b9ca1
+			&:before
+				content: ''
+				display: block
+				position: absolute
+				left: 0px
+			&.location
+				&:before
+					width: 18px
+					height: 24px
+					background: url("../img/location.png") 50% 50% no-repeat
+					background-size: contain
+			&.phone-call
+				&:before
+					width: 24px
+					height: 24px
+					background: url("../img/phone-call.png") 50% 50% no-repeat
+					background-size: contain
+			&.mail
+				&:before
+					width: 24px
+					height: 18px
+					background: url("../img/mail.png") 50% 50% no-repeat
+					background-size: contain
+	.social
+		color: #9b9ca1
+		margin-bottom: 80px
+		ul
+			margin-top: 10px
+			font-size: 0
+			li
+				font-size: 15px
+				display: inline-block
+				margin-right: 10px
+				&:last-child
+					margin-right: 0
+				a
+					display: block
+					width: 24px
+					height: 24px
+					display: flex
+					justify-content: center
+					align-items: center
+					background: #9a9ca4
+					color: #03081c
+					border-radius: 1px
+					transition: .2s
+					&:hover
+						color: #9a9ca4
+						background: #03081c
+						text-decoration: none
+					&:active
+						text-decoration: none
+					&:focus
+						text-decoration: none
+
 .header_logo
 	display: inline-block
 	margin-top: 49px

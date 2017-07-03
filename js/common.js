@@ -417,6 +417,14 @@ $(document).ready(function () {
 		$(this).toggleClass('active');
 	});
 
+	$('.main').click(function(){
+		if($(this).hasClass('active')){
+			$('.eff').toggleClass('active');
+			$('#large-header').toggleClass('active');
+			$('body').toggleClass('slidebars');
+			$('#burger').toggleClass('active');
+		}
+	});
 
 	$(".owl-carousel").slick({
 		dots: true
