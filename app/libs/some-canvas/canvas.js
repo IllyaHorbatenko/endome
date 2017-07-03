@@ -1,25 +1,25 @@
-setTimeout(function () {
-	(function() {
+
+window.someCanvas  = function(wrap,canvasElem,) {
 		var width, height, largeHeader, canvas, ctx, points, target, animateHeader = true;
 		initHeader();
 		initAnimation();
-		// addListeners();
+		addListeners();
 		function initHeader() {
-			width = document.documentElement.clientWidth;
-			height = document.documentElement.scrollHeight;
+			width =  document.getElementById(wrap).clientWidth;
+			height =  document.getElementById(wrap).clientHeight;
 			target = {
 				x: width / 2,
 				y: height / 2
 			};
-			largeHeader = document.getElementById('large-header');
+			largeHeader = document.getElementById(wrap);
 			largeHeader.style.height = height + 'px';
-			canvas = document.getElementById('demo-canvas');
+			canvas = document.getElementById(canvasElem);
 			canvas.width = width;
 			canvas.height = height;
 			ctx = canvas.getContext('2d');
 			points = [];
-			for (var x = 0; x < width; x = x + width / 20) {
-				for (var y = 0; y < height; y = y + height / 20) {
+			for (var x = 0; x < width; x = x + width / 7) {
+				for (var y = 0; y < height; y = y + height / 7) {
 					var px = x + Math.random() * width / 20;
 					var py = y + Math.random() * height / 20;
 					var p = {
@@ -35,7 +35,7 @@ setTimeout(function () {
 				var closest = [];
 				var p1 = points[i];
 				for (var j = 0; j < points.length; j++) {
-					var p2 = points[j]
+					var p2 = points[j];
 					if (!(p1 == p2)) {
 						var placed = false;
 						for (var k = 0; k < 5; k++) {
@@ -59,17 +59,17 @@ setTimeout(function () {
 				p1.closest = closest;
 			}
 			for (var i in points) {
-				var c = new Circle(points[i],2 + Math.random() * 3,'rgba(0,0,0,0.3)');
+				var c = new Circle(points[i], 7,'rgba(0,0,0,0.3)');
 				points[i].circle = c;
 			}
 		}
-		// function addListeners() {
-		// 	if (!('ontouchstart'in window)) {
-		// 		window.addEventListener('mousemove', mouseMove);
-		// 	}
-		// 	window.addEventListener('scroll', scrollCheck);
-		// 	window.addEventListener('resize', resize);
-		// }
+		function addListeners() {
+			// if (!('ontouchstart'in window)) {
+			// 	window.addEventListener('mousemove', mouseMove);
+			// }
+			// window.addEventListener('scroll', scrollCheck);
+			window.addEventListener('resize', resize);
+		}
 		// function mouseMove(e) {
 		// 	var posx  =  0,
 		// 		posy = posx;
@@ -90,11 +90,12 @@ setTimeout(function () {
 				animateHeader = true;
 		}
 		function resize() {
-			width = document.documentElement.clientWidth;
-			height = document.documentElement.scrollHeight;
+			width =  document.getElementById(wrap).clientWidth;
+			height =  document.getElementById(wrap).clientHeight;
 			largeHeader.style.height = height + 'px';
 			canvas.width = width;
 			canvas.height = height;
+
 		}
 		function initAnimation() {
 			animate();
@@ -130,7 +131,7 @@ setTimeout(function () {
 			TweenLite.to(p, 1 + 1 * Math.random(), {
 				x: p.originX - 50 + Math.random() * 100,
 				y: p.originY - 50 + Math.random() * 100,
-				ease: Circ.easeInOut,
+				ease: Power4.easeOut,
 				onComplete: function() {
 					shiftPoint(p);
 				}
@@ -169,5 +170,4 @@ setTimeout(function () {
 
 			return Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2);
 		}
-	})();
-},500)
+	};

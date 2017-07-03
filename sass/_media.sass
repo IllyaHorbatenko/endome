@@ -59,6 +59,16 @@
 		.select-overflow
 			width: 310px
 			margin-right: 90px
+		.animation-item
+			.img-wrap
+				left: 23px
+				transform: scale(0.8)
+			.order
+				width: 122px
+				font-size: 11px
+			.text-cell
+				position: relative
+				//left: -10px
 		.animation-wrap
 			width: 338px
 			padding-left: 20px
@@ -79,7 +89,35 @@
 		.bottom-button,
 		.top-button
 			right: 33px
+
+	.service-page-service-section
+		.description-bg
+			top: 298px
+	.blog-contant-section
+		.blog-item
+			font-size: 12px
+			img
+				width: 100%
+			.link-to-work
+				font-size: 12px
+				margin-right: 8px
+				.arrow-wrap
+					display: none
+	.service-item-section
+		.information
+			padding: 0 15px 50px
+		.order-link
+			left: 15px
+	.no-more-about-service
+		.about-text
+			font-size: 12px
+			br
+				display: none
+
 /* Medium Devices, Desktops */
+@media only screen and (max-width : 1015px)
+	.service-section
+		display: none
 @media only screen and (max-width : 991px)
 	/**/
 	.section-slider
@@ -137,12 +175,54 @@
 				width: 360px
 				margin: auto auto 20px
 
-	.service-section
-		display: none
+	.service-item-section
+		h2
+			font-size: 18px
+		.text
+			font-size: 12px
+			margin-bottom: 24px
+		.order-link
+			font-size: 12px
+			height: 40px
+			width: 180px
 
 /* Small Devices, Tablets */
-@media only screen and (max-width : 768px)
-	
+@media only screen and (max-width : 930px)
+	.links-blog-section
+		min-height: 435px
+		.content
+			transform: rotate(0deg)
+			right: 0
+			top: calc(50% - 60px)
+			.items
+				display: none
+				&.margin-l
+					margin-left: 0
+			.link-wrap
+				display: block
+				.link
+					transform: rotate(-45deg)
+@media only screen and (max-width : 800px)
+	.popup
+		.title
+			margin-bottom: 20px
+			h2
+				font-size: 30px
+				margin: 10px 0 22px
+	.dm-modal
+		width: 500px
+		padding: 30px 15px 20px
+		form
+			width: 100%
+		.input-wrap
+			width: 100%
+			display: block
+			box-sizing: border-box
+			margin-bottom: 5px
+		.textarea-wrap
+			margin: 20px 0 40px
+@media only screen and (max-width : 767px)
+
 	/*Disable Animation on Mobile Devices*/
 	.animated
 		/*CSS transitions*/
@@ -196,6 +276,20 @@
 		.item
 			.text-wrap
 				width: 65%
+
+	.blog-contant-section
+		.blog-item
+			width: 300px
+			margin: 0 auto 30px
+	.service-item-section
+		padding: 40px 0 35px
+		img
+			display: none
+	.no-more-about-service
+		.about-text
+			margin-bottom: 30px
+			br
+				display: block
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 614px)
 	.contacts-section
@@ -253,6 +347,9 @@
 @media only screen and (max-width : 480px)
 	/**/
 
+	.popup
+		br
+			display: none
 	.header_title
 		h1
 			font-size: 26px

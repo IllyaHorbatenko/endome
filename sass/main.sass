@@ -488,7 +488,7 @@ nav[canvas]
 			bottom: 0
 		.anim-bg
 			background: #f5f5f6
-			height: 421px
+			height: 423px
 			top: 42px
 			border: 0
 	.description-bg
@@ -589,10 +589,9 @@ nav[canvas]
 					width: 23px
 					background: url("../img/arrow.png") 50% 50% no-repeat
 					height: 10px
-
-
 	.select-wrap
 		float: right
+		overflow: hidden
 		position: relative
 		.wrap
 			width: 504px
@@ -621,11 +620,15 @@ nav[canvas]
 				width: 141px
 				.img1
 					z-index: 1
-					left: 0
-					top: 70px
+					left: -50px
+					top: 224px
 				.img2
-					right: 0
-					top: 40px
+					right: 40px
+					top: 172px
+					z-index: 0
+				.img3
+					right: 16px
+					top: 210px
 					z-index: 0
 		&.item2
 			.img-wrap
@@ -645,10 +648,10 @@ nav[canvas]
 				width: 141px
 				.img1
 					z-index: 1
-					left: 0
-					top: 70px
+					left: -30px
+					top: 165px
 				.img2
-					right: 0
+					right: 20px
 					top: 40px
 					z-index: 0
 		&.item4
@@ -657,11 +660,15 @@ nav[canvas]
 				width: 141px
 				.img1
 					z-index: 1
-					left: 0
-					top: 70px
+					left: -35px
+					top: 140px
 				.img2
-					right: 0
-					top: 40px
+					right: 66px
+					top: 139px
+					z-index: 1
+				.img3
+					right: 38px
+					top: 171px
 					z-index: 0
 		&.item5
 			.img-wrap
@@ -669,11 +676,11 @@ nav[canvas]
 				width: 141px
 				.img1
 					z-index: 1
-					left: 0
-					top: 70px
+					left: -45px
+					top: 138px
 				.img2
-					right: 0
-					top: 40px
+					right: -4px
+					top: 134px
 					z-index: 0
 		&.item6
 			.img-wrap
@@ -681,11 +688,11 @@ nav[canvas]
 				width: 141px
 				.img1
 					z-index: 1
-					left: 0
-					top: 70px
+					left: -35px
+					top: 85px
 				.img2
-					right: 0
-					top: 40px
+					right: 30px
+					top: 45px
 					z-index: 0
 
 		.tabel
@@ -1122,7 +1129,7 @@ nav[canvas]
 
 .links-blog-section
 	overflow: hidden
-	padding: 80px 0 0 0
+	padding: 120px 0 0 0
 	background: url("../img/blog-bg.png") 50% 50% no-repeat
 	background-size: cover
 	min-height: 715px
@@ -1140,7 +1147,7 @@ nav[canvas]
 			font-size: 0
 			margin-bottom: 12px
 			&.margin-l
-				margin-left: 270px
+				margin-left: 289px
 			.item
 				min-width: 131px
 				min-height: 128px
@@ -1210,6 +1217,14 @@ nav[canvas]
 
 
 //blog-contant-section
+#blog-canvas-wrap
+	position: absolute
+	width: 100%
+	height: 100%
+	left: 0px
+	right: 0px
+	top: 0
+
 .blog-contant-section
 	padding: 74px 0
 	background: #fff
@@ -1256,6 +1271,9 @@ nav[canvas]
 		padding: 15px
 		margin-bottom: 30px
 		text-align: justify
+		transition: .3s
+		&:hover
+			transform: scale(1.05)
 		img
 			margin-bottom: 9px
 		.text
@@ -1317,7 +1335,7 @@ nav[canvas]
 			width: 40px
 			height: 40px
 			margin: 0 1px
-			border: 1px solid
+			border: 1px solid #4e5260
 			display: flex
 			justify-content: center
 			align-items: center
@@ -1359,16 +1377,162 @@ nav[canvas]
 	h3
 		font-size: 20px
 		color: #c8c9ca
+		font-weight: 100
+		margin: 31px 0 51px
+	.content
+		padding-bottom: 110px
 	.contacts
 		li
 			padding-left: 45px
-			margin-bottom: 10px
+			margin-bottom: 18px
+			position: relative
+			&:before
+				content: ''
+				display: block
+				position: absolute
+				left: 0px
+			&.location
+				&:before
+					width: 18px
+					height: 24px
+					background: url("../img/location.png") 50% 50% no-repeat
+					background-size: contain
+			&.phone-call
+				&:before
+					width: 24px
+					height: 24px
+					background: url("../img/phone-call.png") 50% 50% no-repeat
+					background-size: contain
+			&.mail
+				&:before
+					width: 24px
+					height: 18px
+					background: url("../img/mail.png") 50% 50% no-repeat
+					background-size: contain
+	.social
+		margin-bottom: 80px
+		ul
+			margin-top: 27px
+			font-size: 0
+			li
+				font-size: 15px
+				display: inline-block
+				margin-right: 10px
+				&:last-child
+					margin-right: 0
+				a
+					display: block
+					width: 24px
+					height: 24px
+					display: flex
+					justify-content: center
+					align-items: center
+					background: #9a9ca4
+					color: #03081c
+					border-radius: 1px
+					transition: .2s
+					&:hover
+						color: #9a9ca4
+						background: #03081c
+						text-decoration: none
+					&:active
+						text-decoration: none
+					&:focus
+						text-decoration: none
+	.google-map
+		height: 407px
 	.bottom
-		background: #ffffff
-		padding: 50px 0
-		color: #a1a1a3
+		background: #050814
+		padding: 30px 0
+		color: #373943
 		font-size: 12px
+		font-weight: 600
 		text-align: center
+
+
+
+//Service Page
+.service-page-service-section
+	padding: 100px 0
+	.slider-lines
+		top: 261px
+	.description-bg
+		top: 255px
+
+
+.no-more-about-service
+	padding: 79px 0 73px
+	text-align: center
+	color: #d9dadc
+	&.corporation-site-bg
+		background: url(../img/service-page-bg-1.jpg) no-repeat 50% 50%
+		background-size: cover
+	&.landing-page-bg
+		background: url(../img/landing-page-bg.jpg) no-repeat 50% 50%
+		background-size: cover
+	.about-text
+		font-size: 16px
+		line-height: 1.8
+		text-transform: uppercase
+	.mark-img
+		height: 53px
+		margin-bottom: 22px
+		background: url('../img/tick-inside-circle.png') no-repeat 50% 50%
+		background-size: contain
+
+
+.service-item-section
+	background: #f5f5f6
+	padding: 81px 0 35px
+	img
+		margin: auto
+	.information
+		position: relative
+		padding: 28px 8px 50px 32px
+		&.right
+			padding: 28px 15px 44px
+			.order-link
+				left: 15px
+	h2
+		font-weight: 100
+		font-size: 24px
+		color: #35363c
+		text-transform: uppercase
+		text-align: left
+		margin: 0 0 26px
+	.text
+		font-size: 14px
+		color: #6f6f73
+		line-height: 1.73
+		margin-bottom: 63px
+		text-align: justify
+	.order-link
+		height: 44px
+		width: 195px
+		display: flex
+		justify-content: center
+		align-items: center
+		background: #a77600
+		color: #fff
+		border: 1px solid transparent
+		font-size: 14px
+		border-radius: 7px
+		position: absolute
+		bottom: 4px
+		left: 31px
+		transition: .3s
+		&:hover
+			color: #a77600
+			background: transparent
+			border: 1px solid #a77600
+			text-decoration: none
+		&:active
+			text-decoration: none
+		&:focus
+			text-decoration: none
+
+
+
 
 //ALWAYS END
 @import "media"

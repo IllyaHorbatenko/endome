@@ -103,6 +103,18 @@ li
 	display: none
 	overflow: auto	
 	z-index: 1000
+	.title
+		text-align: center
+		margin-bottom: 45px
+		h2
+			color: #38383e
+			font-size: 48px
+			margin: 0 0 27px
+			font-weight: 500
+			line-height: 1
+		p
+			font-size: 14px
+			color: #8c8c8e
 	&.pop3
 		.dm-modal
 			width: inherit
@@ -134,16 +146,15 @@ li
 	text-align: center
 
 .dm-modal
-	width: 470px		
+	width: 745px
 	max-width: 50em
 	display: inline-block
-	padding: 50px 46px 50px 46px
-	border: 3px solid $main_color	
+	padding: 40px 46px 20px
 	text-align: center
 	position: relative	
 	animation: fade .8s
 	background-color: #fff
-	border-radius: 20px
+	border-radius: 4px
 	z-index: 1002
 	.modal_form_input_wrap
 		position: relative
@@ -196,31 +207,48 @@ li
 			left: 10px				
 			height: 8px			
 		
-
+	.input-wrap
+		width: 165px
+		display: inline-block
+		box-sizing: content-box
+		padding: 0 15px
+		margin-bottom: 30px
+	.textarea-wrap
+		padding: 0 15px
+		margin: 0 0 40px
+	form
+		font-size: 0px
+		width: 585px
+		margin: 0 auto
 	label
-		margin-bottom: 7px
-		margin-left: 5px
+		margin-bottom: 2px
 		text-align: left
 		display: block
-		font-family: $font_MyriadPro_Bold
-		@include fz(14)
-		color: $main_txt_color
+		font-size: 14px
+		color: #1e202b
 		&.active
 			color: $main_color
+	textarea
+		resize: none
+		width: 100%
+		background: #f0f0f1
+		height: 120px
+		border: 0px
+		outline: 0
+		box-shadow: inset 0 3px 3px 0 #e2e2e2
 	input
 		width: 100%
 		height: 40px
 		margin-bottom: 10px
-		padding-left: 20px
-		padding-right: 37px
-		border: none		
-		background-color: #F4F4F4		
-		border-radius: 5px		
-		box-shadow: 0 1px 0 rgba(0,0,2,.28)		
-		transition: 1s
+		padding: 0 15px
+		border: none
+		font-size: 14px
+		background-color: #f0f0f1
+		box-shadow: inset 0 3px 3px 0 #e2e2e2
+		transition: .3s
 		&:focus		
 			outline: 0
-			box-shadow: 0 1px 0 rgba(255,81,46,.88)
+			background: #e6e6e7
 	
 	.success_mail
 		display: none
@@ -230,11 +258,23 @@ li
 		&.active
 			display: block
 	input[type=submit]
+		width: 150px
+		height: 35px
+		font-size: 16px
+		text-transform: uppercase
 		margin-bottom: 0
-		margin-top: 20px
-		padding-left: 0
-		padding-right: 0
-		@extend .main_btn				
+		padding: 0
+		background: #a77600
+		border: 1px solid transparent
+		transition: .3s
+		color: #efe7dc
+		border-radius: 0
+		box-shadow: none
+		&:hover
+			background: transparent
+			color: #a77600
+
+			border: 1px solid #a77600
 		&:focus			
 			outline: 0
 	.select
@@ -303,12 +343,12 @@ li
 				transform: rotate(180deg)
 .close
 	position: absolute
-	right: 25px
-	top: 25px
+	right: 11px
+	top: 10px
 	width: 35px
 	height: 36px
 	display: block
-	background: url('../img/modal_close.png') 0 0 no-repeat
+	background: url('../img/modal_close.png') 50% 50% no-repeat
 // конец модального
 
 // всплывающие ошибки в формах
@@ -366,7 +406,10 @@ li
 
 // Header 
 .header
-	position: relative
+	position: fixed
+	width: 100%
+	top: 0
+	z-index: 100
 	text-align: left
 	min-height: 65px
 	background: #03081c
@@ -447,6 +490,7 @@ li
 		transform: skewY(5deg) scaleX(.7) translateY(38px) translateX(106px)
 .main
 	background: #fff
+	padding-top: 65px
 	min-height: 100vh
 .eff
 	transform: skewY(0) scaleX(1) translateY(0) translateX(0)
@@ -457,6 +501,7 @@ li
 		transform: skewY(5deg) scaleX(.7) translateY(-27px) translateX(425px)
 .menu
 	background: #050814
+
 	width: 298px
 	height: 100vh
 	position: absolute
@@ -610,6 +655,29 @@ label
 		transition: .5s
 		top: 14px
 
+.scroll-top-wrap
+	position: fixed
+	display: flex
+	justify-content: center
+	align-items: center
+	bottom: -70px
+	right: 50px
+	z-index: 1000
+	width: 65px
+	height: 65px
+	background: rgba(205,206,208,0.6)
+	color: #fff
+	border-radius: 50%
+	cursor: pointer
+	transition: .3s
+	&.active
+		bottom: 50px
+	&:hover
+		transform: scale(1.1)
+	i
+		font-size: 45px
+		position: relative
+		top: -2px
 
 // Секция 
 // Секция 

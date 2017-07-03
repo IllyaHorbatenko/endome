@@ -1,11 +1,23 @@
-
-
 class sliderAnimationDescription {
 	constructor() {
 		this.ts1 = new TimelineMax();
+		this.ts2 = new TimelineMax();
+		this.ts3 = new TimelineMax();
+		this.ts4 = new TimelineMax();
+		this.ts5 = new TimelineMax();
+		this.ts6 = new TimelineMax();
+
 		this.td1 = new TimelineMax();
 
+		this.text = new TimelineMax();
+
 		this.ts1.pause();
+		this.ts2.pause();
+		this.ts3.pause();
+		this.ts4.pause();
+		this.ts5.pause();
+		this.ts6.pause();
+
 		this.td1.pause();
 	}
 
@@ -14,8 +26,9 @@ class sliderAnimationDescription {
 		this.descAnim();
 	};
 
-	slideAnim(){
-		this.ts1
+	slideAnim() {
+
+		this.text
 			.from('.animation-item h3', 0.7, {
 				y: -50,
 				opacity: 0,
@@ -25,20 +38,92 @@ class sliderAnimationDescription {
 				y: 50,
 				opacity: 0,
 				ease: Power4.easeOut
-			}, '-=0.5')
-			.from('.animation-item .img1', 0.7, {
+			}, '-=0.5');
+
+		this.ts1
+			.from('.animation-item.item1 .img1', 0.7, {
 				y: 100,
 				opacity: 0,
 				ease: Power4.easeOut
+			}, '+=0.5')
+			.from('.animation-item.item1 .img2', 0.7, {
+				y: -100,
+				opacity: 0,
+				ease: Power4.easeOut
 			}, '-=0.5')
-			.from('.animation-item .img2', 0.7, {
+			.from('.animation-item.item1 .img3', 0.7, {
+				y: 100,
+				opacity: 0,
+				ease: Power4.easeOut
+			}, '-=1');
+
+		this.ts2
+			.from('.animation-item.item2  .img1', 0.7, {
+				y: 100,
+				opacity: 0,
+				ease: Power4.easeOut
+			}, '+=0.5')
+			.from('.animation-item.item2  .img2', 0.7, {
+				y: -100,
+				opacity: 0,
+				ease: Power4.easeOut
+			}, '-=0.5');
+
+		this.ts3
+			.from('.animation-item.item3  .img1', 0.7, {
+				y: 100,
+				opacity: 0,
+				ease: Power4.easeOut
+			}, '+=0.5')
+			.from('.animation-item.item3  .img2', 0.7, {
+				y: -100,
+				opacity: 0,
+				ease: Power4.easeOut
+			}, '-=0.5');
+
+		this.ts4
+			.from('.animation-item.item4  .img3', 0.7, {
+				y: -50,
+				opacity: 0,
+				ease: Power4.easeOut
+			}, '+=0.5')
+			.from('.animation-item.item4  .img2', 0.5, {
+				scale: 0,
+				opacity: 0,
+				ease: Power4.easeOut
+			}, '-=0.5')
+			.from('.animation-item.item4  .img1', 0.5, {
+				scale: 0,
+				opacity: 0,
+				ease: Power4.easeOut
+			}, '-=0.4');
+
+		this.ts5
+			.from('.animation-item.item5  .img1', 0.7, {
+				y: 100,
+				opacity: 0,
+				ease: Power4.easeOut
+			}, '+=0.5')
+			.from('.animation-item.item5  .img2', 0.7, {
+				y: -100,
+				opacity: 0,
+				ease: Power4.easeOut
+			}, '-=0.5');
+
+		this.ts6
+			.from('.animation-item.item6  .img1', 0.7, {
+				y: 100,
+				opacity: 0,
+				ease: Power4.easeOut
+			}, '+=0.5')
+			.from('.animation-item.item6  .img2', 0.7, {
 				y: -100,
 				opacity: 0,
 				ease: Power4.easeOut
 			}, '-=0.5');
 	};
 
-	descAnim(){
+	descAnim() {
 		this.td1
 			.from('.service-description-wrap h3', 0.7, {
 				y: -50,
@@ -60,32 +145,44 @@ class sliderAnimationDescription {
 	start(elem = '') {
 		var index = parseInt($(elem).attr('data-index'));
 
-
 		if (index === 1) {
+			this.text.restart();
+
 			this.ts1.restart();
 			this.td1.restart();
 		}
 		else if (index === 2) {
-			this.ts1.restart();
+			this.text.restart();
+
+			this.ts2.restart();
 			this.td1.restart();
 		}
 		else if (index === 3) {
-			this.ts1.restart();
+			this.text.restart();
+
+			this.ts3.restart();
 			this.td1.restart();
 		}
 		else if (index === 4) {
-			this.ts1.restart();
+			this.text.restart();
+
+			this.ts4.restart();
 			this.td1.restart();
 		}
 		else if (index === 5) {
-			this.ts1.restart();
+			this.text.restart();
+
+			this.ts5.restart();
 			this.td1.restart();
 		}
 		else if (index === 6) {
-			this.ts1.restart();
+			this.text.restart();
+
+			this.ts6.restart();
 			this.td1.restart();
 		}
-		else{
+		else {
+			this.text.play();
 			this.ts1.play();
 			this.td1.play();
 		}
@@ -157,7 +254,7 @@ function sliderAnimation() {
 			var index = parseInt($(this).attr('data-index'));
 			$('.animation-item').hide();
 			$('.service-description-wrap .item').hide();
-			
+
 			$('.animation-item[data-index=' + index + ']').show();
 			$('.service-description-wrap .item[data-index=' + index + ']').show();
 
@@ -167,10 +264,49 @@ function sliderAnimation() {
 	});
 }
 
+function activeSection(section, startTop = 0, startBotton = 0) {
+	section = '.' + section;
+	if ($(section).offset() !== undefined) {
+		var topPosition = $(section).offset().top - startTop,
+			bottomPosition = $(section).offset().top + $(section).height() - startBotton;
+		if (($(window).scrollTop() >= topPosition) && ($(window).scrollTop() <= bottomPosition)) {
+			return true;
+		}
+	}
+}
+$(window).scroll(function () {
+	if (activeSection('blog-contant-section')) {
+		$('.scroll-top-wrap').addClass('active')
+	} else {
+		$('.scroll-top-wrap').removeClass('active')
+	}
+});
 
 $(document).ready(function () {
 	animation.description();
 	animation.start();
+
+
+	if ($('#blog-canvas-wrap').length !== 0) {
+		window.someCanvas('blog-canvas-wrap', 'blog-canvas');
+	}
+
+
+	if (activeSection('blog-contant-section')) {
+		$('.scroll-top-wrap').addClass('active')
+	} else {
+		$('.scroll-top-wrap').removeClass('active')
+	}
+
+	$('.scroll-top-wrap').click(function (e) {
+		"use strict";
+		e.preventDefault();
+
+		$('html, body').stop().animate({
+			scrollTop: $('body').offset().top
+		}, 500);
+		return false;
+	});
 
 	$('.service-section .select-wrap .wrap').css('transform', 'rotate(-94deg)');
 	$('.service-section .select-wrap .wrap li').css('transform', 'rotate(94deg)');
@@ -181,8 +317,7 @@ $(document).ready(function () {
 		$(this).attr('data-index', index)
 	});
 
-	
-	
+
 	$('.top-button').click(radioSliderTop);
 	$('.bottom-button').click(radioSliderBottom);
 	$('.service-item').click(function () {
@@ -314,7 +449,5 @@ $(window).resize(function () {
 
 });
 
-$(window).scroll(function () {
 
-});
 

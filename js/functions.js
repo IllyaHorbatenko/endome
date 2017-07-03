@@ -39,59 +39,6 @@ if ('addEventListener' in document) {
         FastClick.attach(document.body);
     }, false);
 }
-// Initialize Slidebars
-(function($) {
-    // Initialize Slidebars
-    var controller = new slidebars();
-    controller.init();
-
-    // Toggle Slidebars
-    $('#nav-button-label').on('click', function(event) {
-        // Stop default action and bubbling
-        event.stopPropagation();
-        event.preventDefault();
-        // Toggle the Slidebar with id 'id-1'
-        controller.toggle('id-1');
-        $("html,body").toggleClass("slidebars");
-    });
-
-    // Close Slidebar links
-    $('[off-canvas] a').on('click', function(event) {
-        event.preventDefault();
-        event.stopPropagation();
-
-        var url = $(this).attr('href'),
-            target = $(this).attr('target') ? $(this).attr('target') : '_self';
-
-        $("#nav-button-label").removeClass("nav-on");
-        $("#nav-button-label .nav-line").removeClass("active");
-        $("html,body").removeClass("slidebars");
-        controller.close(function() {
-            window.open(url, target);
-        });
-    });
-
-    // Add close class to canvas container when Slidebar is opened
-    $(controller.events).on('opening', function(event) {
-        $('[canvas]').addClass('js-close-any');
-    });
-    // Add close class to canvas container when Slidebar is opened
-    $(controller.events).on('closing', function(event) {
-        $('[canvas]').removeClass('js-close-any');
-    });
-    // Close any
-    $(document).on('click', '.js-close-any', function(event) {
-        if (controller.getActiveSlidebar()) {
-            event.preventDefault();
-            event.stopPropagation();
-            $("#nav-button-label").removeClass("nav-on");
-            $("#nav-button-label .nav-line").removeClass("active");
-            $("html,body").removeClass("slidebars");
-            controller.close();
-
-        }
-    });
-})($);
 
 $(document).ready(function() {
 
@@ -164,11 +111,11 @@ $(document).ready(function() {
         // $(".popup[data-modal="+id+"] h2").html(title); // прописать в ссылку data-title="нужный title"
 
         if (window.matchMedia("(min-width: 992px)").matches) {
-            $("body").css({ "overflow": "hidden", "padding-right": "17px" });
+            $("body").css({ "overflow": "hidden" });
         }
         if (window.matchMedia("(max-width: 992px)").matches) {
 
-            $("body").css({ "overflow": "hidden", "padding-right": "0px" });
+            $("body").css({ "overflow": "hidden"});
         }
     });
     // overlay для закрытия
@@ -181,7 +128,7 @@ $(document).ready(function() {
     $(".popup .close").click(function(e) {
         e.preventDefault();
         $(this).parents(".popup").hide("drop", { direction: "up" }, 200);
-        $("body").css({ "overflow": "inherit", "padding-right": "0" });
+        $("body").css({ "overflow": "inherit"});
         $(".dm-modal .modal_form_input_wrap .modal_input_error").hide();
     });
     //обработчик кнопки на нажатие btn_mnu
